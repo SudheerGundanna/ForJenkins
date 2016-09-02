@@ -27,7 +27,11 @@
         <mkdir dir="${dist}/lib"/>
 
         <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-        <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${antbuild}"/>
+        <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar" basedir="${antbuild}">
+                <manifest>
+                    <attribute name = "Main" value="HelloProgram"/>
+                </manifest>
+        </jar>
     </target>
 
     <target name="clean"
